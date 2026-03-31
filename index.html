@@ -16,7 +16,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             background-color: #f4f4f4;
-            color: var(--negro);
+            color: var(--negro); /* Corregido de var(--rojo) que no existía */
         }
 
         header {
@@ -104,6 +104,41 @@
 
         .media-info { padding: 15px; text-align: center; font-weight: bold; }
 
+        /* Sección de Catálogos PDF */
+        .catalog-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            background-color: #e9e9e9;
+        }
+
+        .catalog-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .btn-download {
+            background-color: #d32f2f; /* Rojo para identificar PDF */
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .btn-download:hover {
+            background-color: #b71c1c;
+        }
+
         /* QR Section */
         .qr-section {
             text-align: center;
@@ -148,19 +183,35 @@
     <h2 class="section-title">Galería de Proyectos</h2>
     <div class="gallery-grid">
         <div class="media-card">
-            <img src="maquinado.jpg" alt="Maquinado 4140">
-            <div class="media-info">Maquinado de Precisión 4140</div>
+            <img src="maquinado.jpeg" alt="Maquinado de Precisión">
+            <div class="media-info">Maquinado de Precisión</div>
         </div>
         <div class="media-card">
             <img src="laser-control.jpg" alt="Corte Láser Placa">
-            <div class="media-info">Corte Láser de Placa</div>
+            <div class="media-info">Fabricación</div>
         </div>
         <div class="media-card">
             <video controls>
-                <source src="video-laser.mp4" type="video/mp4">
+                <source src="video-laser.mp4.mp4" type="video/mp4">
                 Tu navegador no soporta videos.
             </video>
             <div class="media-info">Corte Láser de Tubo (En acción)</div>
+        </div>
+    </div>
+
+    <div class="catalog-section">
+        <h2 class="section-title" style="margin-top: 0;">Catálogos Digitales</h2>
+        <p>Descarga nuestra información detallada en formato PDF:</p>
+        <div class="catalog-grid">
+            <a href="soluciones industriales avis.pdf" class="btn-download" download>
+                <i class="fas fa-file-pdf"></i> Catálogo General
+            </a>
+            <a href="FABRICACIONES SOLUCIONES INDUSTRIALES AVIS 2025.pdf" class="btn-download" download>
+                <i class="fas fa-file-pdf"></i> Fabricaciones 2025
+            </a>
+            <a href="Proyectos Avis 2026.pdf" class="btn-download" download>
+                <i class="fas fa-file-pdf"></i> Proyectos 2026
+            </a>
         </div>
     </div>
 
@@ -169,3 +220,11 @@
         <p>Escanea para guardar nuestro contacto</p>
         <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://wa.me/526567766466" alt="QR Contacto" class="qr-code">
         <p><strong>Tel: 656 776 64 66</strong></p>
+    </div>
+
+    <footer>
+        <p>© 2026 Soluciones Industriales Avis - Ciudad Juárez, Chihuahua.</p>
+    </footer>
+
+</body>
+</html>
